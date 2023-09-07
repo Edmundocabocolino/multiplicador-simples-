@@ -1,0 +1,23 @@
+def conv_numero(valor):
+    try:
+        valor = int(valor)
+        return valor
+    except ValueError:
+        try:
+            valor = float(valor)
+            return valor
+        except ValueError:
+            pass
+
+
+
+while True:
+    print('\t \033[31m<MULTIPLICADOR DE VALORES>\033[m')
+    numero = conv_numero(input('Digite um numero: '))
+    val = conv_numero(input('Quer multiplicar por quanto("digite letra para encerrar"): '))
+    try:
+        if numero is not None:
+            print(numero * val)
+    except TypeError:
+        print('<<<Volte Sempre>>>')
+        break
